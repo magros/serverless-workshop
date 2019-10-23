@@ -1,0 +1,15 @@
+service: serverless-workshop
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  timeout: 30
+
+functions:
+  index:
+    handler: handler.run
+    events:
+      - http:
+          path: vacancies
+          method: get
+          cors: true
